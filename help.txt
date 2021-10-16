@@ -1,0 +1,9 @@
+KEYBINDINGS:
+[these are for ingame only]
+ESCAPE: Quit game and save data to game.lvl
+S: Save to game.lvl
+A: Pause game and save to custom file
+Q: Quit without saving ( has are you sure prompt)
+
+UP ARROW: Move up
+DOWN ARROW: MOve down
