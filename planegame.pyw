@@ -39,8 +39,10 @@ sys.excepthook = handle_exception
 log('Program started')
 args = sys.argv
 MDECIDER = 0
-if args[1] == '-new':
-
+try:
+    fto = args[1]
+except:
+    log('initializing level')
     class Player(pygame.sprite.Sprite):
         def __init__(self):
             super(Player, self).__init__()
@@ -53,6 +55,7 @@ if args[1] == '-new':
                 self.rect.move_ip(0, -5)
             if pressed_keys[pygame.K_DOWN]:
                 self.rect.move_ip(0, 5)
+            self.rect.move_ip(0,2)
 
             if self.rect.left < 0:
                 self.rect.left = 0
@@ -78,7 +81,7 @@ if args[1] == '-new':
                 MDECIDER = 1
 
         def update(self):
-            self.rect.move_ip(-7, 0)
+            self.rect.move_ip(-3, 0)
             if self.rect.right < 0:
                 self.kill()
             
@@ -97,7 +100,7 @@ if args[1] == '-new':
     WIDTH, HEIGHT = pygame.display.get_surface().get_size()
     print(WIDTH,HEIGHT)
     ADDENEMY = pygame.USEREVENT + 1
-    pygame.time.set_timer(ADDENEMY, 2500)
+    pygame.time.set_timer(ADDENEMY, 5000)
     player = Player()
 
     all_sprites = pygame.sprite.Group()
@@ -111,6 +114,7 @@ if args[1] == '-new':
     running = True
     clock = pygame.time.Clock()
     tck = 0
+    log('started level')
     while running:
         
         # Did the user click the window close button?
@@ -120,7 +124,15 @@ if args[1] == '-new':
             if event.type == pygame.KEYDOWN:
                 # Was it the Escape key? If so, stop the loop.
                 if event.key == pygame.K_ESCAPE:
-                    running = False
+                    Tk().withdraw()
+                    mln = messagebox.askyesno('PG','Are you sure you want to quit?')
+                    if mln == True:
+                        running = False
+                elif event.key == pygame.K_s:
+                    f = open('game.lvl','w+')
+                    f.write(str(SCORE)+'\n')
+                    f.write(str(player.rect.center))
+                    f.close()
             elif event.type == pygame.QUIT:
                 running = False
             elif event.type == ADDENEMY:
@@ -148,6 +160,8 @@ if args[1] == '-new':
             # If so, then remove the player and stop the loop
             player.kill()
             running = False
+            Tk().withdraw()
+            messagebox.showwarning('PG','You Died\nSCORE: '+str(SCORE))
         pygame.display.flip()
         tck += 1
         if tck > 29:
@@ -157,7 +171,9 @@ if args[1] == '-new':
 
     # Done! Time to quit.
     pygame.quit()
+    log('saving')
     f = open('game.lvl','w+')
     f.write(str(SCORE)+'\n')
     f.write(str(player.rect.center))
     f.close()
+    log('Exiting')
