@@ -41,7 +41,7 @@ GAME = "WIN"
 
 sys.excepthook = handle_exception
 log('Program started')
-
+MAINICO = pygame.image.load("ep.ico")
 pygame.mixer.init()
 pygame.mixer.music.load('pg_music.ogg')
 pygame.mixer.music.play(loops=-1)
@@ -176,6 +176,9 @@ except:
     ADDENEMY = pygame.USEREVENT + 1
     m_ev = pygame.event.Event(ADDENEMY)
     player = Player()
+
+    pygame.display.set_icon(MAINICO)
+    pygame.display.set_caption('Plane Game')
 
     all_sprites = pygame.sprite.Group()
     bar = pygame.sprite.Group()
@@ -474,6 +477,9 @@ print(WIDTH,HEIGHT)
 ADDENEMY = pygame.USEREVENT + 1
 m_ev = pygame.event.Event(ADDENEMY)
 player = Player()
+
+pygame.display.set_icon(MAINICO)
+pygame.display.set_caption("Plane Game")
 
 all_sprites = pygame.sprite.Group()
 bar = pygame.sprite.Group()
