@@ -89,7 +89,7 @@ topl.update()
 log('START Scanning for shortcuts')
 if not os.path.isfile(os.path.join(winshell.desktop(common=False),"Enderbyte Programs Launcher.lnk")):
     log('Making dsktop shortcut')
-    target = os.getcwd()+"launcher.exe"
+    target = os.getcwd()+"\\launcher.exe"
     wDir = os.getcwd()
     path = os.path.join(winshell.desktop(common=False),"Enderbyte Programs Launcher.lnk")
     shell = Dispatch('WScript.Shell')
@@ -101,7 +101,7 @@ if not os.path.isfile(os.path.join(winshell.desktop(common=False),"Enderbyte Pro
 
 if not os.path.isfile(os.path.join(winshell.programs(common=False),"Enderbyte Programs Launcher.lnk")):
     log('making start menu shortcut')
-    target = os.getcwd()+"launcher.exe"
+    target = os.getcwd()+"\\launcher.exe"
     wDir = os.getcwd()
     path = os.path.join(winshell.programs(common=False),"Enderbyte Programs Launcher.lnk")
     shell = Dispatch('WScript.Shell')
