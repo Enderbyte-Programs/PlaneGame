@@ -35,3 +35,6 @@ Save saves the game
 Pressing alt+f4 in game saves the game then quits
 -----
 THIS SOFTWARE IS UNDER THE GNU GPL.
+-----
+
+If your game ever displays and error message starting with "A fatal exception occured", send me a message telling me what it says.
