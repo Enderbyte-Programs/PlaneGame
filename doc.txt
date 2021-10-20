@@ -1,1 +1,37 @@
 Planegame and Enderbyte Programs Launcher Documentation
+-----
+First Edition 2021-10-19, Versions 1.0
+-----
+Thank you for installing! This document includes all the information you need!
+-----
+LAUNCHER
+When you first start the launcher, you will probably need to dismiss "unrecognized publisher" warnings. I assure you that it is safe.
+On first execution, it will take much longer than usual. This is to dump DLLs and download files. (takes about 20 seconds max) You can see details in the latest.log file in the same directory. You should also see a small window that says "downloading files". It may say "not reponding", but if that happens click "wait for program to respond".
+-----
+BUTTONS
+New Game- Start a new game. Saving this will overwrite any data in game.lvl.
+Continue Game- Start a game based off of data found in game.lvl
+Exit- Exits program
+Uninstall- Deletes Log, Deletes Save, Deletes Shortcuts
+Delete Log- Deletes log
+Wipe Save- deletes game.lvl
+Documentation- Open this doc.
+
+message of the day is at the bottom. You can submit new messages by telling me through discord or email (enderbyte09@gmail.com)
+-----
+GAME
+HOW TO USE
+When you press "New Game" in the launcher, it will take a few seconds for the game to start. 
+
+Your player (the plane) automaticaly moves down when you start. If it touches the bottom or the top of the screen, you die. You can move up by clicking or holding the up arrow.
+You can move down quickly by pressing the down arrow
+
+Pressing escape during the game opens the pause menu. Pressing escape while in the pause menu returns to the game.
+There are four buttons: resume resumes the game
+save and quit saves the game, then quits.
+Quit without save closes the game without saving.
+Save saves the game
+
+Pressing alt+f4 in game saves the game then quits
+-----
+THIS SOFTWARE IS UNDER THE GNU GPL.
